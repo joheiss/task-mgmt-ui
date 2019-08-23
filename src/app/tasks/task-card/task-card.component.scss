@@ -1,0 +1,33 @@
+.jo-card {
+    margin: 1.5rem 3rem 1.5rem 0;
+    width: 24rem;
+    padding: 1rem 2rem;
+    box-shadow: 0 0.5rem 1rem rgba(black, 0.2);
+    transition: all 0.25s;
+}
+
+.jo-status {
+    width: 10rem;
+    background-color: #eeeeee;
+    border: 1px solid #eeeeee;
+    border-radius: 2%;
+    padding: 0.5rem 0.5rem;
+    margin-right: 1rem;
+    align-self: start;
+}
+
+.jo-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+mat-card-content {
+    padding: 0 1rem;
+    min-height: 5rem;
+}
+
+mat-card-actions {
+    /* border-top: 1px solid #3F51B5; */
+    & button {
+        margin-left: 1rem;
+    }
+}

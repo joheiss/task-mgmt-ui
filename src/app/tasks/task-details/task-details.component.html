@@ -1,0 +1,43 @@
+<mat-card class="jo-details-form">
+    <mat-card-header>
+        <mat-card-title>
+            <span *ngIf="task && task.id">EDIT TASK {{ task.id }}</span>
+            <span *ngIf="task && !task.id">CREATE TASK</span>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="form" fxLayout="column" autocomplete="off" novalidate spellcheck="false" id="form">
+            <mat-form-field>
+                <input matInput formControlName="title" placeholder="title">
+                <mat-error>Please enter a title</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+            <textarea matInput formControlName="description" placeholder="description"
+                      matTextareaAutosize matAutosizeMinRows="3" matAutosizeMaxRows="5"></textarea>
+                <mat-error>Please enter a description</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-select id="status" formControlName="status" placeholder="status">
+                    <mat-option *ngFor="let status of statuses" [value]="status">
+                        {{ status }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions fxLayout fxLayoutAlign="end" fxLayoutGap="1rem">
+        <button mat-mini-fab color="primary" (click)="onSave(form.value)" [disabled]="!form.valid">
+            <mat-icon>save</mat-icon>
+        </button>
+        <a mat-mini-fab color="warn" [routerLink]="['/tasks']">
+            <mat-icon>cancel</mat-icon>
+        </a>
+    </mat-card-actions>
+    <!--
+    <mat-card-footer>
+        <mat-error *ngIf="task && task.error">
+            {{ task.error.error.message }}
+        </mat-error>
+    </mat-card-footer>
+    -->
+</mat-card>

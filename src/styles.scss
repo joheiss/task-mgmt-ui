@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    height: 100vh
+}
+
+body {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    height: 100vh;
+}
+
+.jo-error-dialog {
+    mat-dialog-container {
+        background-color: #ffc3be;
+    }
+}

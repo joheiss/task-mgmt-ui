@@ -1,0 +1,36 @@
+<mat-card class="jo-card">
+    <mat-card-header>
+        <mat-card-title>{{ task.title }}</mat-card-title>
+        <!--
+        <mat-card-subtitle>
+        </mat-card-subtitle>
+        -->
+    </mat-card-header>
+    <mat-card-content>
+        {{ task.description }}
+    </mat-card-content>
+    <mat-card-actions fxLayout fxLayoutAlign="space-between">
+        <div fxLayout class="jo-status">
+            <mat-select id="status" [(value)]="task.status" (selectionChange)="onStatusChanged($event)">
+                <mat-option *ngFor="let status of statuses" [value]="status">
+                    {{ status }}
+                </mat-option>
+            </mat-select>
+        </div>
+        <div>
+            <a mat-mini-fab color="primary" [routerLink]="['/tasks', task.id]">
+                <mat-icon>edit</mat-icon>
+            </a>
+            <button mat-mini-fab color="warn" (click)="onDelete(task)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
+    </mat-card-actions>
+    <!--
+    <mat-card-footer>
+        <mat-error *ngIf="error">
+            {{ error?.error.message }}
+        </mat-error>
+    </mat-card-footer>
+    -->
+</mat-card>

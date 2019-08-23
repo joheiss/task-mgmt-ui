@@ -1,0 +1,11 @@
+.jo-cards {
+    list-style: none;
+}
+
+.jo-card {
+    transition: all 0.25s;
+
+    &:hover {
+        transform: translateY(-3px) scale(1.02);
+    }
+}

@@ -1,0 +1,11 @@
+<div *ngIf="tasks?.length" fxLayout="row wrap" class="jo-cards">
+    <app-task-card *ngFor="let task of tasks"
+                   [task]="task"
+                   (delete)="onDelete($event)"
+                   (status)="onStatusChange($event)"
+                   class="jo-card">
+    </app-task-card>
+</div>
+<div *ngIf="!tasks?.length">
+    <p>No tasks available. Create one?</p>
+</div>

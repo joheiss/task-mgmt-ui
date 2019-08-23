@@ -1,0 +1,29 @@
+<mat-toolbar color="primary" classs="jo-navi-header">
+    <div fxHide fxShow.lt-md>
+        <button mat-icon-button (click)="onToggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+    <div fxFlex fxLayout="row nowrap" fxLayoutAlign="flex-end">
+        <div fxShow fxHide.lt-md>
+            <ul fxLayout fxLayoutGap="3rem" class="jo-navi-items">
+                <li>
+                    <a [routerLink]="['/tasks']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <span>Tasks</span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/about']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <span>About</span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/auth/signout']" routerLinkActive="active"
+                       [routerLinkActiveOptions]="{exact: true}">
+                        <mat-icon>cancel</mat-icon>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</mat-toolbar>

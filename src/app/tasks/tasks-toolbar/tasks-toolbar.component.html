@@ -1,0 +1,30 @@
+<div fxLayout="row nowrap" fxLayoutAlign="start stretch" class="jo-toolbar">
+    <div fxLayout="row nowrap" fxLayoutAlign="space-between" class="jo-filters">
+        <form [formGroup]="form" fxLayout fxLayoutAlign="space-between" class="jo-toolbar-form" autocomplete="off" novalidate spellcheck="false" id="form">
+            <mat-form-field>
+                <mat-placeholder>
+                    <mat-icon>search</mat-icon>
+                    search
+                </mat-placeholder>
+                <input matInput formControlName="search">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-placeholder>
+                    <mat-icon>filter_list</mat-icon>
+                    status filter
+                </mat-placeholder>
+                <mat-select id="status" formControlName="status">
+                    <mat-option *ngFor="let status of statuses" [value]="status">
+                        {{ status }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </form>
+    </div>
+    <div fxLayout fxLayoutAlign="end" class="jo-buttons">
+        <a mat-fab color="primary" [routerLink]="['/tasks', 'new']">
+            <mat-icon>add</mat-icon>
+        </a>
+    </div>
+
+</div>
